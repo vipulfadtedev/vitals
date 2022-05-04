@@ -1,0 +1,27 @@
+{
+  "name": "vitals",
+  "version": "1.0.0",
+  "description": "Small project to capture and project some vitals off my website...",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "PORT=3000 NODE_ENV=development node dist/index.js",
+    "predeploy": "npm run build",
+    "deploy": "cp -r .deta dist/ && cp package.json dist/ && cd dist && deta deploy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.31",
+    "tslint": "^6.1.3",
+    "typescript": "^4.6.4"
+  }
+}
